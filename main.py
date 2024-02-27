@@ -1,9 +1,10 @@
 import telebot
 import google.generativeai as genai
+import os
 
-TOKEN = 'TELEGRAM_BOT_TOKEN'
+TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 bot = telebot.TeleBot(TOKEN)
-genai.configure(api_key="GEMINI_API_KEY")
+genai.configure(api_key=os.environ['GEMINI_API_KEY'])
 
 # Set up the model
 generation_config = {
